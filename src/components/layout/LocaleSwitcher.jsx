@@ -15,11 +15,12 @@ export default function LocaleSwitcher({ locale, onLocaleChanged }) {
       >
         Active locale
       </label>
+
       <select
         id="locale"
         value={locale}
         onChange={(e) => onLocaleChanged(e.target.value)}
-        className=" rounded-lg border border-indigo-300 bg-indigo-50 p-2.5 text-sm text-indigo-950 focus:border-purple-500 focus:ring-purple-500"
+        className="has-down-arrow flex-grow appearance-none rounded-md border border-indigo-300 bg-indigo-50 p-1.5 text-sm text-indigo-950 focus:border-indigo-500 focus:outline-none focus:ring-[0.5px] focus:ring-indigo-500"
       >
         {locales.map((locale) => (
           <option key={locale.code} value={locale.code}>
