@@ -1,5 +1,5 @@
 import { IntlProvider } from "react-intl";
-import Interpolation from "./components/Interpolation";
+import MessagePlayground from "./components/MessagePlayground";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           messages.
         </p>
 
-        <Interpolation />
+        <MessagePlayground />
       </main>
     </IntlProvider>
   );
