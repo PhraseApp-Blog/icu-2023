@@ -1,10 +1,18 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import variablesFor from "../lib/variables-for";
 
-export default function MessagePlayground({ id }) {
-  const [message, setMessage] = useState("Hello, {name}!");
+MessagePlayground.propTypes = {
+  id: PropTypes.string.isRequired,
+  initialMessage: PropTypes.string,
+};
+
+export default function MessagePlayground({ id, initialMessage = "" }) {
+  const [message, setMessage] = useState(initialMessage);
+
   const [variables, parsingError] = variablesFor(message);
+
   const [values, setValues] = useState(
     variables.reduce((acc, cur) => {
       acc[cur] = `{${cur}}`;
@@ -21,6 +29,7 @@ export default function MessagePlayground({ id }) {
         >
           Message
         </label>
+
         <textarea
           id={`${id}-message`}
           className="mt-2 w-full rounded-sm bg-indigo-50 p-2 text-indigo-950"
@@ -28,8 +37,10 @@ export default function MessagePlayground({ id }) {
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
 
-        <h4 className="mt-3 block text-lg">Variables</h4>
-        {/* Map variables to labeled inputs */}
+        {variables.length > 0 && (
+          <h4 className="mt-3 block text-lg">Variables</h4>
+        )}
+
         {variables.map(({ name, type }) => (
           <div
             key={`${id}-var-${name}`}
