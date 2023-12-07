@@ -1,4 +1,4 @@
-import SectionIntro from "./layout/SectionIntro";
+import SectionIntro from "../layout/SectionIntro";
 
 export default function InterpolationIntro() {
   return (

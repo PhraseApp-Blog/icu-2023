@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 SectionIntro.propTypes = {
   header: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  thingsToTry: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.node.isRequired,
+  thingsToTry: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 export default function SectionIntro({ header, description, thingsToTry }) {
@@ -13,7 +13,7 @@ export default function SectionIntro({ header, description, thingsToTry }) {
 
       <p className="mt-4 text-sm">{description}</p>
 
-      <p className="mt-4 text-purple-300">Try the following:</p>
+      <h3 className="mt-4 font-semibold text-purple-300">Try the following</h3>
 
       <ul className="ml-4 list-outside list-disc text-purple-300">
         {thingsToTry.map((thingToTry) => (
