@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import locales from "../lib/locales";
+import locales from "../../lib/locales";
 
 LocaleSwitcher.propTypes = {
   locale: PropTypes.string.isRequired,
