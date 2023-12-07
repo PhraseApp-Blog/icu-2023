@@ -1,24 +1,8 @@
-import { parse } from "@formatjs/icu-messageformat-parser";
-import { nanoid } from "nanoid";
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
+import variablesFor from "../lib/variables-for";
 
-function variablesFor(message) {
-  try {
-    const ast = parse(message);
-    console.log({ ast });
-    const variables = ast
-      .map((node) => [1, 6].includes(node.type) && node.value)
-      .filter(Boolean);
-    return [variables, null];
-  } catch (e) {
-    console.error(e);
-    return [[], e.message];
-  }
-}
-
-export default function MessagePlayground() {
-  const id = nanoid(10);
+export default function MessagePlayground({ id }) {
   const [message, setMessage] = useState("Hello, {name}!");
   const [variables, parsingError] = variablesFor(message);
   const [values, setValues] = useState(
@@ -46,18 +30,23 @@ export default function MessagePlayground() {
 
         <h4 className="mt-3 block text-lg">Variables</h4>
         {/* Map variables to labeled inputs */}
-        {variables.map((variable) => (
-          <div key={variable} className="mt-2 flex items-center gap-2">
-            <label htmlFor={variable} className="basis-28 font-semibold">
-              {variable}
+        {variables.map(({ name, type }) => (
+          <div
+            key={`${id}-var-${name}`}
+            className="mt-2 flex items-center gap-2"
+          >
+            <label htmlFor={`${id}-${name}`} className="basis-28 font-semibold">
+              {name}
             </label>
+
             <input
-              id={variable}
+              id={`${id}-${name}`}
+              type={type === "number" ? "number" : "text"}
               className="flex-grow rounded-sm bg-indigo-50 p-2 text-indigo-950"
-              placeholder={variable}
-              value={values[variable] || ""}
+              placeholder={type === "number" ? "0" : name}
+              value={values[name] || ""}
               onChange={(e) =>
-                setValues((prev) => ({ ...prev, [variable]: e.target.value }))
+                setValues((prev) => ({ ...prev, [name]: e.target.value }))
               }
             />
           </div>

@@ -1,5 +1,10 @@
+import { nanoid } from "nanoid";
 import { IntlProvider } from "react-intl";
 import MessagePlayground from "./components/MessagePlayground";
+
+function id() {
+  return nanoid(10);
+}
 
 function App() {
   return (
@@ -21,7 +26,7 @@ function App() {
           messages.
         </p>
 
-        <MessagePlayground />
+        <MessagePlayground id={id()} />
       </main>
     </IntlProvider>
   );
