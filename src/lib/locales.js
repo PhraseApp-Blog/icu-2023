@@ -1,0 +1,15 @@
+export default [
+  { defaultName: "Mandarin Chinese (China)", code: "zh-CN" },
+  { defaultName: "Spanish (Spain)", code: "es-ES" },
+  { defaultName: "English (United States)", code: "en-US" },
+  { defaultName: "Hindi (India)", code: "hi-IN" },
+  { defaultName: "Bengali (Bangladesh)", code: "bn-BD" },
+  { defaultName: "Portuguese (Brazil)", code: "pt-BR" },
+  { defaultName: "Russian (Russia)", code: "ru-RU" },
+  { defaultName: "Japanese (Japan)", code: "ja-JP" },
+  { defaultName: "Western Punjabi (Pakistan)", code: "pnb-PK" },
+  { defaultName: "Marathi (India)", code: "mr-IN" },
+  { defaultName: "French (France)", code: "fr-FR" },
+  { defaultName: "Arabic (Saudi Arabia)", code: "ar-SA" },
+  { defaultName: "Indonesian (Indonesia)", code: "id-ID" },
+];
