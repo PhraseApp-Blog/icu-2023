@@ -18,16 +18,17 @@ function App() {
           (International Components for Unicode).
         </p>
 
-        <hr className="mt-4 h-[0.5px] border-0 bg-indigo-400" />
+        <hr className="mt-4 h-[0.5px] border-0 bg-purple-400" />
 
         <InterpolationIntro />
         <MessagePlayground id={id()} initialMessage="Hello, {name}!" />
 
-        <hr className="mt-8 h-[0.5px] border-0 bg-indigo-400" />
+        <hr className="mt-8 h-[0.5px] border-0 bg-purple-400" />
 
         <PluralsIntro />
         <MessagePlayground
           id={id()}
+          rows={5}
           initialMessage={`{count, plural,
   one {You have # message.}
   other {You have # messages.}

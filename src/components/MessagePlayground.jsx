@@ -6,9 +6,14 @@ import variablesFor from "../lib/variables-for";
 MessagePlayground.propTypes = {
   id: PropTypes.string.isRequired,
   initialMessage: PropTypes.string,
+  rows: PropTypes.number,
 };
 
-export default function MessagePlayground({ id, initialMessage = "" }) {
+export default function MessagePlayground({
+  id,
+  initialMessage = "",
+  rows = 3,
+}) {
   const [message, setMessage] = useState(initialMessage);
 
   const [variables, parsingError] = variablesFor(message);
@@ -32,6 +37,7 @@ export default function MessagePlayground({ id, initialMessage = "" }) {
 
         <textarea
           id={`${id}-message`}
+          rows={rows}
           className="mt-2 w-full rounded-sm bg-indigo-50 p-2 text-indigo-950"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
