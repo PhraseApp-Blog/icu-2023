@@ -1,10 +1,11 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
 import { IntlProvider } from "react-intl";
+import InterpolationIntro from "./components/InterpolationIntro";
 import LocaleSwitcher from "./components/LocaleSwitcher";
 import MessagePlayground from "./components/MessagePlayground";
-import InterpolationIntro from "./components/intros/InterpolationIntro";
-import PluralsIntro from "./components/intros/PluralsIntro";
+import PluralsIntro from "./components/PluralsIntro";
+import Section from "./components/layout/Section";
 
 function id() {
   return nanoid(10);
@@ -33,22 +34,22 @@ function App() {
           (International Components for Unicode).
         </p>
 
-        <hr className="mt-4 h-[0.5px] border-0 bg-purple-400" />
-        <InterpolationIntro />
-        <MessagePlayground id={id()} initialMessage="Hello, {name}!" />
+        <Section>
+          <InterpolationIntro />
+          <MessagePlayground id={id()} initialMessage="Hello, {name}!" />
+        </Section>
 
-        <hr className="mt-8 h-[0.5px] border-0 bg-purple-400" />
-        <PluralsIntro />
-        <MessagePlayground
-          id={id()}
-          rows={5}
-          initialMessage={`{count, plural,
+        <Section>
+          <PluralsIntro />
+          <MessagePlayground
+            id={id()}
+            rows={5}
+            initialMessage={`{count, plural,
   one {You have # message.}
   other {You have # messages.}
 }`}
-        />
-
-        <hr className="mt-8 h-[0.5px] border-0 bg-purple-400" />
+          />
+        </Section>
       </main>
     </IntlProvider>
   );

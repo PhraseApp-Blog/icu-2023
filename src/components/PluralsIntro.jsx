@@ -1,4 +1,4 @@
-import SectionIntro from "./SectionIntro";
+import SectionIntro from "./layout/SectionIntro";
 
 export default function PluralsIntro() {
   return (
