@@ -4,7 +4,7 @@ export default function InterpolationIntro() {
   return (
     <SectionIntro
       header="Interpolation"
-      description="Arguably the most important component of ICU is the message format. It allows you to create messages that can be translated into different languages. You can also interpolate runtime variables into your messages."
+      description="Within a translation message, ICU provides a robust syntax that allows for various kinds of dynamic data. We can, for example, interpolate runtime variables into our messages."
       thingsToTry={[
         "Add your name as the value of the `name` variable",
         "Change the message to `Hello {firstName} {lastName}!` and fill in the values for `firstName` and `lastName`",

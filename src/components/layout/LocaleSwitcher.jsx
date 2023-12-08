@@ -4,17 +4,24 @@ import locales from "../../lib/locales";
 LocaleSwitcher.propTypes = {
   locale: PropTypes.string.isRequired,
   onLocaleChanged: PropTypes.func.isRequired,
+  showLabel: PropTypes.bool,
 };
 
-export default function LocaleSwitcher({ locale, onLocaleChanged }) {
+export default function LocaleSwitcher({
+  locale,
+  onLocaleChanged,
+  showLabel = true,
+}) {
   return (
     <div className="flex items-baseline justify-end gap-2">
-      <label
-        htmlFor="locale"
-        className="block text-sm font-medium text-indigo-800"
-      >
-        Active locale
-      </label>
+      {showLabel && (
+        <label
+          htmlFor="locale"
+          className="block text-sm font-medium text-indigo-800"
+        >
+          Active locale
+        </label>
+      )}
 
       <select
         id="locale"

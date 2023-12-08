@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { IntlProvider } from "react-intl";
 import MessagePlayground from "./components/MessagePlayground";
+import TranslationsExample from "./components/TranslationsExample";
 import InterpolationIntro from "./components/intros/InterpolationIntro";
 import OrdinalsIntro from "./components/intros/OrdinalsIntro";
 import PluralsIntro from "./components/intros/PluralsIntro";
+import UsageWithLibrariesIntro from "./components/intros/UsageWithLibrariesIntro";
 import Header from "./components/layout/Header";
 import LocaleSwitcher from "./components/layout/LocaleSwitcher";
 import Main from "./components/layout/Main";
@@ -29,6 +31,15 @@ function App() {
       />
 
       <Main>
+        {/* Usage in i18n libraries */}
+        <Section hasBorder={false}>
+          <UsageWithLibrariesIntro />
+          <TranslationsExample
+            locale={activeLocale}
+            onLocaleChanged={(loc) => setActiveLocale(loc)}
+          />
+        </Section>
+
         {/* Interpolation */}
         <Section>
           <InterpolationIntro />
