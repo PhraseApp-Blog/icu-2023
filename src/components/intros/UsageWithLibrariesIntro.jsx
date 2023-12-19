@@ -10,7 +10,6 @@ export default function UsageWithLibrariesIntro() {
           <a
             target="_blank"
             rel="noreferrer"
-            className="text-purple-300 underline"
             href="https://formatjs.io/docs/react-intl/"
           >
             react-intl

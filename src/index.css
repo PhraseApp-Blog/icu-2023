@@ -10,3 +10,7 @@
     background-size: 1.5rem;
   }
 }
+
+a {
+  @apply text-purple-300 underline;
+}

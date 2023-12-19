@@ -9,9 +9,13 @@ export default function NumbersIntro() {
           The ICU <code>number</code> format, which is used to format numbers as
           strings. This is useful for formatting numbers as currency,
           percentages, or just plain numbers. You can use{" "}
-          <a href="https://unicode-org.github.io/icu/userguide/format_parse/numbers/skeletons.html">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://unicode-org.github.io/icu/userguide/format_parse/numbers/skeletons.html"
+          >
             number skeletons
-          </a>
+          </a>{" "}
           to customize the format of the number.
         </>
       }
