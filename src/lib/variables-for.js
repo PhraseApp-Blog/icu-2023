@@ -1,16 +1,21 @@
 import { parse } from "@formatjs/icu-messageformat-parser";
 
+// Node types
+const NT_VARIABLE = 1;
+const NT_SELECT = 5;
+const NT_PLURAL = 6;
+
 function extractVariables(node) {
   let variables = [];
 
-  if (node.type === 1 || node.type === 6) {
+  if ([NT_VARIABLE, NT_PLURAL, NT_SELECT].includes(node.type) && node.value) {
     variables.push({
       name: node.value,
-      type: node.type === 1 ? "string" : "number",
+      type: node.type === NT_PLURAL ? "number" : "string",
     });
   }
 
-  if (node.type === 6 && node.options) {
+  if ([NT_PLURAL, NT_SELECT].includes(node.type) && node.options) {
     for (let option in node.options) {
       node.options[option].value.forEach((childNode) => {
         variables = variables.concat(extractVariables(childNode));

@@ -5,6 +5,7 @@ import TranslationsExample from "./components/TranslationsExample";
 import InterpolationIntro from "./components/intros/InterpolationIntro";
 import OrdinalsIntro from "./components/intros/OrdinalsIntro";
 import PluralsIntro from "./components/intros/PluralsIntro";
+import SelectIntro from "./components/intros/SelectIntro";
 import UsageWithLibrariesIntro from "./components/intros/UsageWithLibrariesIntro";
 import Header from "./components/layout/Header";
 import LocaleSwitcher from "./components/layout/LocaleSwitcher";
@@ -71,6 +72,20 @@ function App() {
   few {We planted our #rd tree.}
   other {We planted our #th tree.}
 }`}
+          />
+        </Section>
+
+        {/* Select */}
+        <Section>
+          <SelectIntro />
+          <MessagePlayground
+            id={id()}
+            rows={6}
+            initialMessage={`{gender, select,
+male {He}
+female {She}
+other {They}
+} will be with you shortly.`}
           />
         </Section>
       </Main>
