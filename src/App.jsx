@@ -3,6 +3,7 @@ import { IntlProvider } from "react-intl";
 import MessagePlayground from "./components/MessagePlayground";
 import TranslationsExample from "./components/TranslationsExample";
 import InterpolationIntro from "./components/intros/InterpolationIntro";
+import NumbersIntro from "./components/intros/NumbersIntro";
 import OrdinalsIntro from "./components/intros/OrdinalsIntro";
 import PluralsIntro from "./components/intros/PluralsIntro";
 import SelectIntro from "./components/intros/SelectIntro";
@@ -86,6 +87,14 @@ male {He}
 female {She}
 other {They}
 } will be with you shortly.`}
+          />
+        </Section>
+
+        <Section>
+          <NumbersIntro />
+          <MessagePlayground
+            id={id()}
+            initialMessage="{price, number, ::currency/USD unit-width-narrow K}."
           />
         </Section>
       </Main>
