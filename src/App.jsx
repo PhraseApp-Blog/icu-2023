@@ -106,7 +106,7 @@ other {They}
           <DatesIntro />
           <MessagePlayground
             id={id()}
-            initialMessage="{aDate, date, ::dMMMyyyy G HH:mm a zzz}"
+            initialMessage="{aDate, date, ::yyyy.MMMM.dd GGG hh:mm aaa}"
           />
         </Section>
       </Main>

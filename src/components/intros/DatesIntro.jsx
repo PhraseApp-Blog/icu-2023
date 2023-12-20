@@ -13,7 +13,7 @@ export default function DatesIntro() {
             target="_blank"
             rel="noreferrer"
           >
-            format numbers
+            format dates
           </a>
           . React Intl, which we&apos;re using in this app, only supports a{" "}
           <a
