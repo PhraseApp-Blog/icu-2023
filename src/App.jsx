@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IntlProvider } from "react-intl";
 import MessagePlayground from "./components/MessagePlayground";
 import TranslationsExample from "./components/TranslationsExample";
+import DatesIntro from "./components/intros/DatesIntro";
 import InterpolationIntro from "./components/intros/InterpolationIntro";
 import NumbersIntro from "./components/intros/NumbersIntro";
 import OrdinalsIntro from "./components/intros/OrdinalsIntro";
@@ -90,11 +91,21 @@ other {They}
           />
         </Section>
 
+        {/* Numbers */}
         <Section>
           <NumbersIntro />
           <MessagePlayground
             id={id()}
             initialMessage="{price, number, ::currency/USD unit-width-narrow K}."
+          />
+        </Section>
+
+        {/* Dates */}
+        <Section>
+          <DatesIntro />
+          <MessagePlayground
+            id={id()}
+            initialMessage="{aDate, date, ::dMMMyyyy G HH:mm a zzz}"
           />
         </Section>
       </Main>

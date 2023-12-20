@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
+import parseValues from "../lib/parse-values";
 import variablesFor from "../lib/variables-for";
 
 MessagePlayground.propTypes = {
@@ -58,7 +59,7 @@ export default function MessagePlayground({
 
             <input
               id={`${id}-${name}`}
-              type={type === "number" ? "number" : "text"}
+              type={type}
               className="flex-grow rounded-sm bg-indigo-50 p-2 text-indigo-950"
               placeholder={type === "number" ? "0" : name}
               value={values[name] || ""}
@@ -82,7 +83,7 @@ export default function MessagePlayground({
             <FormattedMessage
               id={message || "..."}
               defaultMessage={message || "..."}
-              values={values}
+              values={parseValues(values, variables)}
             />
           )}
         </p>

@@ -3,6 +3,7 @@ import { parse } from "@formatjs/icu-messageformat-parser";
 // Node types
 const NT_VARIABLE = 1;
 const NT_NUMBER = 2;
+const NT_DATE = 3;
 const NT_SELECT = 5;
 const NT_PLURAL = 6;
 
@@ -10,12 +11,20 @@ function extractVariables(node) {
   let variables = [];
 
   if (
-    [NT_VARIABLE, NT_NUMBER, NT_PLURAL, NT_SELECT].includes(node.type) &&
+    [NT_VARIABLE, NT_NUMBER, NT_DATE, NT_PLURAL, NT_SELECT].includes(
+      node.type,
+    ) &&
     node.value
   ) {
     variables.push({
       name: node.value,
-      type: [NT_PLURAL, NT_NUMBER].includes(node.type) ? "number" : "string",
+      type: {
+        [NT_PLURAL]: "number",
+        [NT_NUMBER]: "number",
+        [NT_DATE]: "date",
+        [NT_VARIABLE]: "string",
+        [NT_SELECT]: "string",
+      }[node.type],
     });
   }
 
