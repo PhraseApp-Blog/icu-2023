@@ -9,6 +9,7 @@ import OrdinalsIntro from "./components/intros/OrdinalsIntro";
 import PluralsIntro from "./components/intros/PluralsIntro";
 import SelectIntro from "./components/intros/SelectIntro";
 import UsageWithLibrariesIntro from "./components/intros/UsageWithLibrariesIntro";
+import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import LocaleSwitcher from "./components/layout/LocaleSwitcher";
 import Main from "./components/layout/Main";
@@ -109,6 +110,8 @@ other {They}
           />
         </Section>
       </Main>
+
+      <Footer />
     </IntlProvider>
   );
 }
