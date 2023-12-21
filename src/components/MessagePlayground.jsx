@@ -20,8 +20,8 @@ export default function MessagePlayground({
   const [variables, parsingError] = variablesFor(message);
 
   const [values, setValues] = useState(
-    variables.reduce((acc, cur) => {
-      acc[cur] = `{${cur}}`;
+    variables.reduce((acc, { name }) => {
+      acc[name] = "";
       return acc;
     }, {}),
   );
