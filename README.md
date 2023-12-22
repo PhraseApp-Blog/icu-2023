@@ -21,3 +21,11 @@ start the server:
 npm install
 npm run dev
 ```
+
+## A note on console errors
+
+We're using the [React Intl](https://formatjs.io/docs/react-intl/) library to handle the ICU Message Format.
+But we're kind of hacking React Intl, which is really meant to
+be used as a behind-the-scenes i18n library. So you might see errors
+in the console. If the app is functioning correctly, you probably
+don't need to worry about them.
