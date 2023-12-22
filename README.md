@@ -1,8 +1,23 @@
-# React + Vite
+# ICU Demo Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a demo for playing with and exploring the ICU Message Format.
+It's a companion to our [ICU Guide](https://phrase.com/blog/posts/guide-to-the-icu-message-format/).
 
-Currently, two official plugins are available:
+## Running on StackBlitz
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you're accessing this demo on StackBlitz, it should
+run automatically. You might need to expand the preview
+pane to get the best experience.
+
+## Running Locally
+
+If you're running this locally, you'll need to have a
+recent version of [Node.js](https://nodejs.org/en) installed.
+
+With that in place, install the app dependencies and
+start the server:
+
+```bash
+npm install
+npm run dev
+```
