@@ -6,8 +6,8 @@ It's a companion to our [ICU Guide](https://phrase.com/blog/posts/guide-to-the-i
 ## Running on StackBlitz
 
 If you're accessing this demo on StackBlitz, it should
-run automatically. You might need to expand the preview
-pane to get the best experience.
+run automatically. You might need to expand the built-in
+browser pane to get the best experience.
 
 ## Running Locally
 
